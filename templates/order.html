@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiggy - Gourmet Food Delivery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            overflow-x: hidden;
+            color: #333;
+        }
+
+        header {
+            position: relative;
+            height: 100vh;
+            background: url('https://via.placeholder.com/1600x900') no-repeat center center/cover;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+
+        header p {
+            font-size: 18px;
+            margin-top: 15px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+        }
+
+        .cta-btn {
+            padding: 15px 40px;
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 30px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: #e55d53;
+            transform: scale(1.1);
+        }
+
+        nav {
+            background-color: #333;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 20px 0;
+            z-index: 999;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        nav ul li a:hover {
+            color: #ff6f61;
+            border-bottom: 2px solid #ff6f61;
+        }
+
+        .menu-section {
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .menu-section h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .menu-item {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-item img {
+            width: 100%;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .menu-item img:hover {
+            transform: scale(1.1);
+        }
+
+        .menu-item h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-top: 15px;
+            color: #ff6f61;
+        }
+
+        .menu-item p {
+            font-size: 16px;
+            margin-top: 10px;
+            color: #555;
+        }
+
+        .order-btn {
+            background-color: #ff6f61;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .order-btn:hover {
+            background-color: #e55d53;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 16px;
+            font-weight: 300;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="{% url 'food:chicken' %}">Order Now</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div>
+            <h1>Welcome to Swiggy</h1>
+            <p>Gourmet Food Delivered Right to Your Doorstep</p>
+            <button class="cta-btn">Order Now</button>
+        </div>
+    </header>
+
+    <div class="menu-section">
+        <h2>Our Featured Menu</h2>
+        <div class="menu-items">
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/300" alt="Food Item">
+                <h3>Deluxe Pizza</h3>
+                <p>A delicious pizza loaded with cheese and fresh toppings.</p>
+                <button class="order-btn">Order Now</button>
+            </div>
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/300" alt="Food Item">
+                <h3>Spicy Burger</h3>
+                <p>Juicy beef patty with spicy sauce and crunchy lettuce.</p>
+                <button class="order-btn">Order Now</button>
+            </div>
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/300" alt="Food Item">
+                <h3>Italian Pasta</h3>
+                <p>Rich and creamy pasta with a blend of authentic spices.</p>
+                <button class="order-btn">Order Now</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Swiggy | Premium Food Delivery Service</p>
+    </footer>
+
+</body>
+</html>

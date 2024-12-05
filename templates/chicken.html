@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiggy - Food Ordering</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        header {
+            background-color: #ff6f61;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        nav {
+            text-align: center;
+            background-color: #ff6f61;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #ffcccb;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        .menu {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+        }
+        .menu-item {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: center;
+        }
+        .menu-item img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .menu-item h3 {
+            color: #ff6f61;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        .menu-item p {
+            color: #555;
+        }
+        .order-btn {
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .order-btn:hover {
+            background-color: #ff4b3a;
+        }
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to Swiggy</h1>
+        <p>Order delicious food from your favorite restaurants</p>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Menu</a>
+        <a href="#">Offers</a>
+        <a href="{% url 'delivery:order' %}">Delivery</a>
+    </nav>
+
+    <div class="container">
+        <div class="menu">
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/200" alt="Food Item">
+                <h3>Pizza</h3>
+                <p>Delicious cheesy pizza with your favorite toppings</p>
+                <button class="order-btn">Order Now</button>
+            </div>
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/200" alt="Food Item">
+                <h3>Burger</h3>
+                <p>Juicy burgers with fresh ingredients</p>
+                <button class="order-btn">Order Now</button>
+            </div>
+            <div class="menu-item">
+                <img src="https://via.placeholder.com/200" alt="Food Item">
+                <h3>Pasta</h3>
+                <p>Italian pasta with rich, creamy sauce</p>
+                <button class="order-btn">Order Now</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Swiggy - All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
